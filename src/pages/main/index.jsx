@@ -1,36 +1,38 @@
 import { useState, useEffect } from "react";
-import { BASE_URL } from "../../context/cartContext";
 import axios from "axios";
+import styles from "./styles.module.css";
+import Banner from "../../assets/Banner.png";
+import ProductCard from "../../components/ProductCard";
+import { BASE_URL } from "../../context/cartContext";
+
 function Main() {
   const [products, setProducts] = useState([]);
-  async function fetchProducts() {
+
+  const fetchProducts = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}/productData`);
-      setProducts(response.data);
+      const { data } = await axios.get(`${BASE_URL}/productData`);
+ 
+      setProducts(data);
     } catch (error) {
-      console.error("Error occured when fetching products: ", error);
+      console.error("Ошибка загрузки товаров:", error);
     }
-  }
+  };
+
   useEffect(() => {
     fetchProducts();
   }, []);
+
   return (
-    <main>
-      {/* <News /> */}
+    <main className={styles.main}>
+      <img src={Banner} alt="Banner" className={styles.banner} />
       <h1>Товары</h1>
-      <div>
-        {products.map(({ id, name, image, price }) => {
-          // <ProductCard>
-          return (
-            <div key={id}>
-              <h1>{name}</h1>
-              <img src={products[0].image} alt="" />
-              <h2>Price: {price}</h2>
-            </div>
-          );
-        })}
+      <div className={styles.productsGrid}>
+        {products.map(({ id, name, image, price }) => (
+          <ProductCard key={id} name={name} image={image} price={price} />
+        ))}
       </div>
     </main>
   );
 }
+
 export default Main;
