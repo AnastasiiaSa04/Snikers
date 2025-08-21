@@ -5,6 +5,7 @@ import Banner from "../../assets/Banner.png";
 import ProductCard from "../../components/ProductCard";
 import { BASE_URL } from "../../context/cartContext";
 
+
 function Main() {
   const [products, setProducts] = useState([]);
 

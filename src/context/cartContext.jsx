@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 
 export const BASE_URL = "https://664623b951e227f23aadf146.mockapi.io";
@@ -45,6 +45,8 @@ const CartProvider = ({ children }) => {
     </CartContext.Provider>
   );
 };
+
+export const useCart = () => useContext(CartContext);
 
 export default CartProvider;
 
