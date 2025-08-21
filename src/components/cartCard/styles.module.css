@@ -1,0 +1,32 @@
+.cartCard {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.cartCard:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+}
+
+.image {
+  width: 40%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.deleteCorb {
+    border-radius: 50%;
+    padding: 20px;
+    color: #ddd;
+    background-color: #F3F3F3;
+
+}

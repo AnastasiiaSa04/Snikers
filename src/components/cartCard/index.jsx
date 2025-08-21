@@ -1,4 +1,6 @@
 import { useCart } from "../../context/cartContext" 
+import styles from "./styles.module.css"
+import deleteCorb from "../../assets/deleteCorb.png"
 
 function CartCard({product}) {
     const {removeFromCart} = useCart();
@@ -6,12 +8,16 @@ function CartCard({product}) {
         removeFromCart(product.id);
     }  
     return (
-        <div>
-            <img src={product.image} alt={product.name}></img>
+        <div className={styles.cartCard}>
+            <img src={product.image} alt={product.name} className={styles.image}></img>
             <h3>{product.name}</h3>
             <div>Price:
                 <p>{product.price} evriki</p>
-                <button  onClick={handleRemove} >Delete</button>
+                     <img className={styles.deleteCorb} 
+                          onClick={handleRemove}  
+                          src={deleteCorb} 
+                          alt="delete Button" />
+               
             </div>
         </div>
     )

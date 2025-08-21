@@ -3,19 +3,24 @@ import axios from "axios";
 
 export const BASE_URL = "https://664623b951e227f23aadf146.mockapi.io";
 
+
 export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
-  async function fetchCartItems() {
+  const fetchCartItems = async () => {
     try {
       const response = await axios.get(`${BASE_URL}/cartData`);
-      setCartItems(response.data);
+      if (Array.isArray(response.data)) {
+        setCartItems(response.data);
+      } else {
+        setCartItems([]);
+      }
     } catch (error) {
-      console.log("Error fetching cart items: ", error);
+      console.error("Error fetching cart items:", error);
     }
-  }
+  };
 
   useEffect(() => {
     fetchCartItems();
@@ -24,20 +29,20 @@ const CartProvider = ({ children }) => {
   const addToCart = async (item) => {
     try {
       const response = await axios.post(`${BASE_URL}/cartData`, item);
-      setCartItems(prev => [...prev, response.data]);
+      setCartItems((prev) => [...prev, response.data]);
     } catch (error) {
-      console.log("Error adding to cart:", error);
+      console.error("Error adding to cart:", error);
     }
   };
 
   const removeFromCart = async (id) => {
-    try {
-      await axios.delete(`${BASE_URL}/cartData/${id}`);
-      setCartItems(prev => prev.filter(item => item.id !== id));
-    } catch (error) {
-      console.log("Error removing from cart:", error);
-    }
-  };
+  try {
+    await axios.delete(`${BASE_URL}/cartData/${id}`);
+    setCartItems((prev) => prev.filter((item) => item.id !== id));
+  } catch (error) {
+    console.error("Error removing from cart:", error);
+  }
+};
 
   return (
     <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>

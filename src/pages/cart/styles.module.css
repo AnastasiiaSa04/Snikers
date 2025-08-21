@@ -1,0 +1,38 @@
+
+.cartMain {
+  max-width: 1140px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.cartMain h1 {
+  text-align: left;
+  color: #000;
+  font-size: 2rem;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 70px;
+  padding-bottom: 50px;
+}
+
+.cartMain p {
+  text-align: left;
+  font-size: 1.1rem;
+  color: #000;
+}
+
+.cartItems {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+  width: 50%;
+}
+
+.totalPrice {
+  text-align: right;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #000;
+  margin-top: 20px;
+}

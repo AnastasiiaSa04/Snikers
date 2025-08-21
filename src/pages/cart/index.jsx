@@ -9,20 +9,24 @@ function Cart() {
   const totalPrice = cartItems.reduce((total, item) => total + parseFloat(item.price), 0);
 
   return (
-    <div className={styles.cart}>
+    <div className={styles.cartMain}>
       <h1>Корзина</h1>
       {cartItems.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
         <>
-          <div>
+          <div className={styles.cartItems}>
             {cartItems.map(item => (
               <CartCard key={item.id} product={item} />
             ))}
           </div>  
-          <div>
-            Total price: {totalPrice.toLocaleString("eu-EU")} Eur
-          </div>
+    <div className={styles.totalPrice}>
+        <p>Итого</p>
+            {cartItems.map(item => (
+        <p key={item.id}>{item.name}</p>
+  ))}
+        <p>{totalPrice.toLocaleString("eu-EU")} E</p>
+</div>
         </>
       )}
     </div>
@@ -30,3 +34,5 @@ function Cart() {
 }
 
 export default Cart;
+
+ {/* Итого {totalPrice.toLocaleString("eu-EU")} */}
