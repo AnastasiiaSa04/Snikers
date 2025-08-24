@@ -2,25 +2,33 @@ import { useCart } from "../../context/cartContext"
 import styles from "./styles.module.css"
 import deleteCorb from "../../assets/deleteCorb.png"
 
-function CartCard({product}) {
-    const {removeFromCart} = useCart();
-    const handleRemove = () => {
-        removeFromCart(product.id);
-    }  
-    return (
-        <div className={styles.cartCard}>
-            <img src={product.image} alt={product.name} className={styles.image}></img>
-            <h3>{product.name}</h3>
-            <div>Price:
-                <p>{product.price} evriki</p>
-                     <img className={styles.deleteCorb} 
-                          onClick={handleRemove}  
-                          src={deleteCorb} 
-                          alt="delete Button" />
-               
-            </div>
+function CartCard({ product }) {
+  const { removeFromCart } = useCart()
+  const handleRemove = () => {
+    removeFromCart(product.id)
+  }
+
+  return (
+    <div className={styles.cartCard}>
+      <img 
+        src={product.image} 
+        alt={product.name} 
+        className={styles.snikersPic} 
+      />
+
+      <div className={styles.cartInfo}>
+        <h3>{product.name}</h3>
+        <div className={styles.priceBlock}>
+          <span>Цена:</span>
+        <p>{product.price}€</p>
         </div>
-    )
+      </div>
+
+      <button className={styles.deleteBtn} onClick={handleRemove}>
+        <img src={deleteCorb} alt="Удалить" />
+      </button>
+    </div>
+  )
 }
 
-export default CartCard;
+export default CartCard

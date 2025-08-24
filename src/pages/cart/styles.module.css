@@ -1,4 +1,3 @@
-
 .cartMain {
   max-width: 1140px;
   margin: 40px auto;
@@ -8,31 +7,66 @@
 .cartMain h1 {
   text-align: left;
   color: #000;
-  font-size: 2rem;
+  font-size: 24px;
   border-bottom: 2px solid #ddd;
   margin-bottom: 70px;
   padding-bottom: 50px;
 }
 
-.cartMain p {
-  text-align: left;
-  font-size: 1.1rem;
-  color: #000;
-}
-
-.cartItems {
+.cartContent {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-bottom: 20px;
-  width: 50%;
+  justify-content: space-between; 
+  align-items: flex-start;
+  gap: 40px;
 }
 
 .totalPrice {
-  text-align: right;
-  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  color: #000;
+  width: 35%; 
+  background-color: #FAFAFA;
+  padding: 50px;
+}
+
+.total {
+  text-align: center;
+  font-size: 25px;
   font-weight: bold;
   color: #000;
+}
+
+.info {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  font-size: 20px;
+}
+ 
+.price {
+  width: 100%;
+  text-align: left;
   margin-top: 20px;
 }
+
+.priceLine {
+  border-top: 2px solid #ddd;
+  width: 100%;
+  margin-bottom: 10px; 
+}
+
+.price span {
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 6px; 
+}
+
+.price p {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
