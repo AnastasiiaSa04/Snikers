@@ -9,25 +9,19 @@ function CartCard({ product }) {
   }
 
   return (
-    <div className={styles.cartCard}>
-      <img 
-        src={product.image} 
-        alt={product.name} 
-        className={styles.snikersPic} 
-      />
-
-      <div className={styles.cartInfo}>
+<div className={styles.cartCard}>
+        <img src={product.image} alt={product.name} className={styles.snikersPic} />
+  <div className={styles.cartInfo}> 
         <h3>{product.name}</h3>
-        <div className={styles.priceBlock}>
-          <span>Цена:</span>
+    <div className={styles.priceBlock}>
+        <span>Цена:</span>
         <p>{product.price}€</p>
-        </div>
-      </div>
-
-      <button className={styles.deleteBtn} onClick={handleRemove}>
-        <img src={deleteCorb} alt="Удалить" />
-      </button>
     </div>
+          <button className={styles.deleteBtn} onClick={handleRemove}>
+                <img src={deleteCorb} alt="Удалить" />
+          </button>
+  </div>
+</div>
   )
 }
 

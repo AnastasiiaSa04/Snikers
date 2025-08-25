@@ -1,0 +1,193 @@
+.contactsMain {
+  max-width: 1140px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.contactsMain h1 {
+  font-size: 24px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 65%; 
+}
+
+.contactsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contactsList li {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form input {
+    background-color: #FAFAFA;
+    outline: none;
+}
+
+.inputsRow {
+  display: flex;
+  gap: 20px;
+}
+
+.inputsRow input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.messageRow textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: vertical;
+  background-color: #FAFAFA;
+  outline: none;
+}
+
+button {
+  width: 100px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #090D1A;
+  color: #fff;
+  cursor: pointer;
+  align-self: flex-end; 
+}
+
+button:hover {
+  background-color: #555;
+}
+
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 30%;
+  height: auto;
+  background-color: #FAFAFA; 
+  margin-top: 80px;
+  padding: 10px 20px 100px 20px;
+  font-size: 15px;
+  color: #555;
+}
+
+.socialIcons {
+  display: flex;
+  flex-wrap: wrap;      
+  gap: clamp(10px, 4vw, 30px); 
+  justify-content: center;
+  gap: 30px;
+}
+
+.socialIcons img {
+  width: clamp(24px, 5vw, 40px);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.socialIcons img:hover {
+  transform: scale(1.2);
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    flex-direction: column; 
+    gap: 40px;
+  }
+
+  .leftColumn,
+  .rightColumn {
+    width: 100%; 
+    margin-top: 0;
+  }
+
+  button {
+    align-self: flex-start; 
+  }
+
+    .socialIcons {
+    gap: 20px;
+  }
+
+  .socialIcons img {
+    width: clamp(24px, 6vw, 36px);
+  }
+}
+
+@media (max-width: 600px) {
+  .contactsMain {
+    padding: 10px;
+  }
+
+  .contactsMain h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .inputsRow {
+    flex-direction: column; 
+    gap: 15px;
+  }
+
+  .inputsRow input,
+  .messageRow textarea {
+    width: 100%;
+  }
+
+  button {
+    width: 100%; 
+    align-self: center;
+  }
+
+  .socialIcons {
+    gap: 15px;
+  }
+
+  .socialIcons img {
+    width: clamp(20px, 8vw, 28px);
+  }
+}

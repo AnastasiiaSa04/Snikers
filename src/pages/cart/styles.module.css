@@ -17,11 +17,12 @@
   display: flex;
   justify-content: space-between; 
   align-items: flex-start;
-  gap: 40px;
+  flex-wrap: wrap;
 }
 
 .totalPrice {
   display: flex;
+  flex: 1;
   justify-content: center;
   flex-direction: column;
   gap: 30px;
@@ -68,5 +69,6 @@
   font-size: 24px;
   font-weight: bold;
 }
+
 
 

@@ -5,6 +5,7 @@
   background-color: #232425;
   flex-wrap: nowrap;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 
@@ -75,6 +76,27 @@
   border-bottom: 1px solid #566369; 
 }
 
+@media (max-width: 1024px) {
+  .footer {
+    padding: 20px 40px;
+    justify-content: center;
+    text-align: center;
+  }
+  .footerForm input {
+    min-width: 200px;
+  }
+}
 
+@media (max-width: 600px) {
+    .footerForm {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footerForm input {
+    width: 100%;
+    min-width: auto;
+  }
+}
 
 

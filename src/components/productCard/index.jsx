@@ -45,9 +45,7 @@ function ProductCard({ id, name, image, price }) {
         <div className={styles.smokeWrapper}>
           {smokeParticles.map((_, idx) => {
             const delay = Math.random() * 0.5; 
-
-
-            return (
+      return (
               <div
                 key={idx}
                 className={styles.smoke}

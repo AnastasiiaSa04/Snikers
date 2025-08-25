@@ -30,3 +30,27 @@
   text-decoration: none;
   font-weight: 600;
 }
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 30px 60px;
+  }
+
+  .header nav {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .header nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

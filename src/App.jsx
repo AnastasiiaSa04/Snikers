@@ -20,7 +20,6 @@ function App() {
       <Route path="/contacts" element={<Contacts/>} />
     </Routes>
     < Footer />
-    {/* footer */}
     </div>
       </CartProvider>
   )

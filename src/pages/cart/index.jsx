@@ -10,18 +10,18 @@ function Cart() {
 
   return (
 <div className={styles.cartMain}>
-  <h1>Корзина</h1>
-  {cartItems.length === 0 ? (
-    <p>Your cart is empty.</p>
-  ) : (
-    <div className={styles.cartContent}>
-      <div className={styles.cartItems}>
+        <h1>Корзина</h1>
+            {cartItems.length === 0 ? (
+        <p>Your cart is empty.</p>
+            ) : (
+  <div className={styles.cartContent}>
+    <div className={styles.cartItems}>
         {cartItems.map(item => (
           <CartCard key={item.id} product={item} />
         ))}
-      </div>
+    </div>
       <div className={styles.totalPrice}>
-        <p className={styles.total}>Итого</p>
+          <p className={styles.total}>Итого</p>
         {cartItems.map(item => (
           <p className={styles.info} key={item.id}>{item.name}</p>
         ))}
@@ -31,7 +31,7 @@ function Cart() {
                 <p>{totalPrice.toLocaleString("eu-EU")}€</p>
         </div>
       </div>
-    </div>
+  </div>
   )}
 </div>
   );
@@ -39,4 +39,3 @@ function Cart() {
 
 export default Cart;
 
- {/* Итого {totalPrice.toLocaleString("eu-EU")} */}
